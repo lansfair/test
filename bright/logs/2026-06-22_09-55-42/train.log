@@ -1,0 +1,3 @@
+2026-06-22 09:55:42 - DDP=ON | World=4
+2026-06-22 09:55:42 - Data: /mnt/ht2-nas2/EO_test/openmmlab-archive/dat/DFC2025 BRIGHT | BS=4x4=16
+2026-06-22 09:55:42 - Finetune=True | Epochs=100 | Output: /mnt/qh2-nas3/00-model/00-mgy/olmoearth_cd_server/outputs/2026-06-22_09-55-42

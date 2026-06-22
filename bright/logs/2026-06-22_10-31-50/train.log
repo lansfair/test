@@ -1,0 +1,117 @@
+2026-06-22 10:31:50 - DDP=ON | World=4
+2026-06-22 10:31:50 - Data: /mnt/ht2-nas2/EO_test/openmmlab-archive/dat/DFC2025 BRIGHT | BS=4x4=16
+2026-06-22 10:31:50 - Finetune=True | Epochs=100 | Output: /mnt/qh2-nas3/00-model/00-mgy/olmoearth_cd_server/outputs/2026-06-22_10-31-50
+2026-06-22 10:33:37 - Epoch   1 | Train Loss 0.5369 | Val F1 0.3798 | Val IoU 0.4258 | Val P 0.5430 | Val R 0.6635
+2026-06-22 10:33:38 -   -> Best F1: 0.3798 [saved]
+2026-06-22 10:35:13 - Epoch   2 | Train Loss 0.3496 | Val F1 0.3850 | Val IoU 0.4385 | Val P 0.5230 | Val R 0.7307
+2026-06-22 10:35:16 -   -> Best F1: 0.3850 [saved]
+2026-06-22 10:36:51 - Epoch   3 | Train Loss 0.3389 | Val F1 0.3934 | Val IoU 0.4668 | Val P 0.5975 | Val R 0.6811
+2026-06-22 10:36:53 -   -> Best F1: 0.3934 [saved]
+2026-06-22 10:38:28 - Epoch   4 | Train Loss 0.3123 | Val F1 0.4566 | Val IoU 0.4460 | Val P 0.6545 | Val R 0.5833
+2026-06-22 10:38:30 -   -> Best F1: 0.4566 [saved]
+2026-06-22 10:40:05 - Epoch   5 | Train Loss 0.3100 | Val F1 0.3758 | Val IoU 0.3944 | Val P 0.7629 | Val R 0.4494
+2026-06-22 10:41:42 - Epoch   6 | Train Loss 0.2997 | Val F1 0.4240 | Val IoU 0.4687 | Val P 0.6225 | Val R 0.6549
+2026-06-22 10:43:17 - Epoch   7 | Train Loss 0.2750 | Val F1 0.4989 | Val IoU 0.4639 | Val P 0.6330 | Val R 0.6345
+2026-06-22 10:43:20 -   -> Best F1: 0.4989 [saved]
+2026-06-22 10:44:55 - Epoch   8 | Train Loss 0.2547 | Val F1 0.3994 | Val IoU 0.4809 | Val P 0.6391 | Val R 0.6602
+2026-06-22 10:46:31 - Epoch   9 | Train Loss 0.2558 | Val F1 0.4963 | Val IoU 0.5027 | Val P 0.6744 | Val R 0.6639
+2026-06-22 10:48:06 - Epoch  10 | Train Loss 0.2596 | Val F1 0.4593 | Val IoU 0.5319 | Val P 0.6730 | Val R 0.7173
+2026-06-22 10:49:43 - Epoch  11 | Train Loss 0.2525 | Val F1 0.5073 | Val IoU 0.5182 | Val P 0.6745 | Val R 0.6910
+2026-06-22 10:49:46 -   -> Best F1: 0.5073 [saved]
+2026-06-22 10:51:42 - Epoch  12 | Train Loss 0.2509 | Val F1 0.5205 | Val IoU 0.5316 | Val P 0.6339 | Val R 0.7671
+2026-06-22 10:51:44 -   -> Best F1: 0.5205 [saved]
+2026-06-22 10:53:18 - Epoch  13 | Train Loss 0.2411 | Val F1 0.4744 | Val IoU 0.4985 | Val P 0.7409 | Val R 0.6038
+2026-06-22 10:54:53 - Epoch  14 | Train Loss 0.2405 | Val F1 0.5499 | Val IoU 0.5351 | Val P 0.6990 | Val R 0.6954
+2026-06-22 10:54:54 -   -> Best F1: 0.5499 [saved]
+2026-06-22 10:57:08 - Epoch  15 | Train Loss 0.2137 | Val F1 0.5226 | Val IoU 0.5424 | Val P 0.6707 | Val R 0.7394
+2026-06-22 10:59:56 - Epoch  16 | Train Loss 0.2352 | Val F1 0.5465 | Val IoU 0.5451 | Val P 0.7132 | Val R 0.6981
+2026-06-22 11:02:44 - Epoch  17 | Train Loss 0.2353 | Val F1 0.5259 | Val IoU 0.5202 | Val P 0.7341 | Val R 0.6410
+2026-06-22 11:05:32 - Epoch  18 | Train Loss 0.2252 | Val F1 0.4950 | Val IoU 0.5455 | Val P 0.6507 | Val R 0.7714
+2026-06-22 11:08:23 - Epoch  19 | Train Loss 0.2289 | Val F1 0.5199 | Val IoU 0.5426 | Val P 0.7064 | Val R 0.7007
+2026-06-22 11:11:13 - Epoch  20 | Train Loss 0.2456 | Val F1 0.5425 | Val IoU 0.5535 | Val P 0.7062 | Val R 0.7191
+2026-06-22 11:14:04 - Epoch  21 | Train Loss 0.2659 | Val F1 0.4858 | Val IoU 0.5001 | Val P 0.6464 | Val R 0.6884
+2026-06-22 11:16:01 - Epoch  22 | Train Loss 0.2250 | Val F1 0.5168 | Val IoU 0.5256 | Val P 0.6492 | Val R 0.7342
+2026-06-22 11:17:37 - Epoch  23 | Train Loss 0.2375 | Val F1 0.4312 | Val IoU 0.5356 | Val P 0.7078 | Val R 0.6876
+2026-06-22 11:19:13 - Epoch  24 | Train Loss 0.2444 | Val F1 0.5237 | Val IoU 0.5349 | Val P 0.6870 | Val R 0.7074
+2026-06-22 11:20:50 - Epoch  25 | Train Loss 0.2341 | Val F1 0.4125 | Val IoU 0.5172 | Val P 0.6359 | Val R 0.7347
+2026-06-22 11:22:25 - Epoch  26 | Train Loss 0.2618 | Val F1 0.4074 | Val IoU 0.5070 | Val P 0.6834 | Val R 0.6626
+2026-06-22 11:24:02 - Epoch  27 | Train Loss 0.2382 | Val F1 0.4195 | Val IoU 0.5323 | Val P 0.6393 | Val R 0.7609
+2026-06-22 11:25:38 - Epoch  28 | Train Loss 0.2358 | Val F1 0.4641 | Val IoU 0.5429 | Val P 0.6734 | Val R 0.7369
+2026-06-22 11:27:15 - Epoch  29 | Train Loss 0.2046 | Val F1 0.4867 | Val IoU 0.5144 | Val P 0.7245 | Val R 0.6395
+2026-06-22 11:28:51 - Epoch  30 | Train Loss 0.2282 | Val F1 0.4535 | Val IoU 0.5192 | Val P 0.6775 | Val R 0.6897
+2026-06-22 11:31:06 - Epoch  31 | Train Loss 0.2396 | Val F1 0.5412 | Val IoU 0.5416 | Val P 0.6958 | Val R 0.7097
+2026-06-22 11:33:06 - Epoch  32 | Train Loss 0.2144 | Val F1 0.4921 | Val IoU 0.5455 | Val P 0.6408 | Val R 0.7859
+2026-06-22 11:35:07 - Epoch  33 | Train Loss 0.2209 | Val F1 0.5623 | Val IoU 0.5598 | Val P 0.7109 | Val R 0.7248
+2026-06-22 11:35:08 -   -> Best F1: 0.5623 [saved]
+2026-06-22 11:37:09 - Epoch  34 | Train Loss 0.2062 | Val F1 0.5257 | Val IoU 0.5517 | Val P 0.7045 | Val R 0.7178
+2026-06-22 11:39:14 - Epoch  35 | Train Loss 0.1896 | Val F1 0.4946 | Val IoU 0.5564 | Val P 0.6807 | Val R 0.7530
+2026-06-22 11:41:18 - Epoch  36 | Train Loss 0.1909 | Val F1 0.5165 | Val IoU 0.5574 | Val P 0.7071 | Val R 0.7246
+2026-06-22 11:43:20 - Epoch  37 | Train Loss 0.2136 | Val F1 0.5063 | Val IoU 0.5513 | Val P 0.6303 | Val R 0.8147
+2026-06-22 11:45:23 - Epoch  38 | Train Loss 0.2099 | Val F1 0.5068 | Val IoU 0.5289 | Val P 0.7428 | Val R 0.6475
+2026-06-22 11:47:26 - Epoch  39 | Train Loss 0.1913 | Val F1 0.5198 | Val IoU 0.5467 | Val P 0.7173 | Val R 0.6969
+2026-06-22 11:49:31 - Epoch  40 | Train Loss 0.1857 | Val F1 0.5729 | Val IoU 0.5645 | Val P 0.7256 | Val R 0.7177
+2026-06-22 11:49:38 -   -> Best F1: 0.5729 [saved]
+2026-06-22 11:51:37 - Epoch  41 | Train Loss 0.2012 | Val F1 0.5657 | Val IoU 0.5740 | Val P 0.7088 | Val R 0.7512
+2026-06-22 11:53:41 - Epoch  42 | Train Loss 0.1931 | Val F1 0.5531 | Val IoU 0.5520 | Val P 0.7327 | Val R 0.6912
+2026-06-22 11:55:46 - Epoch  43 | Train Loss 0.1959 | Val F1 0.5663 | Val IoU 0.5594 | Val P 0.7277 | Val R 0.7075
+2026-06-22 11:57:50 - Epoch  44 | Train Loss 0.2004 | Val F1 0.5253 | Val IoU 0.5607 | Val P 0.6967 | Val R 0.7418
+2026-06-22 11:59:43 - Epoch  45 | Train Loss 0.2058 | Val F1 0.5271 | Val IoU 0.5593 | Val P 0.7215 | Val R 0.7133
+2026-06-22 12:01:49 - Epoch  46 | Train Loss 0.1914 | Val F1 0.5307 | Val IoU 0.5665 | Val P 0.7169 | Val R 0.7297
+2026-06-22 12:03:53 - Epoch  47 | Train Loss 0.1882 | Val F1 0.5630 | Val IoU 0.5659 | Val P 0.7080 | Val R 0.7381
+2026-06-22 12:06:00 - Epoch  48 | Train Loss 0.1916 | Val F1 0.5595 | Val IoU 0.5757 | Val P 0.7344 | Val R 0.7271
+2026-06-22 12:08:04 - Epoch  49 | Train Loss 0.2064 | Val F1 0.5641 | Val IoU 0.5774 | Val P 0.7475 | Val R 0.7173
+2026-06-22 12:10:08 - Epoch  50 | Train Loss 0.1909 | Val F1 0.5519 | Val IoU 0.5852 | Val P 0.7290 | Val R 0.7479
+2026-06-22 12:12:13 - Epoch  51 | Train Loss 0.1805 | Val F1 0.5721 | Val IoU 0.5937 | Val P 0.6943 | Val R 0.8039
+2026-06-22 12:14:17 - Epoch  52 | Train Loss 0.1846 | Val F1 0.5509 | Val IoU 0.5810 | Val P 0.7244 | Val R 0.7458
+2026-06-22 12:16:22 - Epoch  53 | Train Loss 0.1763 | Val F1 0.5573 | Val IoU 0.5913 | Val P 0.7080 | Val R 0.7819
+2026-06-22 12:18:26 - Epoch  54 | Train Loss 0.2146 | Val F1 0.5675 | Val IoU 0.5966 | Val P 0.7112 | Val R 0.7873
+2026-06-22 12:20:30 - Epoch  55 | Train Loss 0.1953 | Val F1 0.5615 | Val IoU 0.5907 | Val P 0.7239 | Val R 0.7626
+2026-06-22 12:22:35 - Epoch  56 | Train Loss 0.1831 | Val F1 0.5557 | Val IoU 0.5950 | Val P 0.7122 | Val R 0.7833
+2026-06-22 12:24:37 - Epoch  57 | Train Loss 0.1931 | Val F1 0.5517 | Val IoU 0.5938 | Val P 0.7234 | Val R 0.7682
+2026-06-22 12:26:29 - Epoch  58 | Train Loss 0.1765 | Val F1 0.5563 | Val IoU 0.5924 | Val P 0.7250 | Val R 0.7640
+2026-06-22 12:28:38 - Epoch  59 | Train Loss 0.1844 | Val F1 0.5621 | Val IoU 0.5918 | Val P 0.7309 | Val R 0.7566
+2026-06-22 12:30:42 - Epoch  60 | Train Loss 0.2022 | Val F1 0.5580 | Val IoU 0.5942 | Val P 0.7182 | Val R 0.7748
+2026-06-22 12:32:46 - Epoch  61 | Train Loss 0.2229 | Val F1 0.5710 | Val IoU 0.5791 | Val P 0.7026 | Val R 0.7672
+2026-06-22 12:34:51 - Epoch  62 | Train Loss 0.2010 | Val F1 0.5280 | Val IoU 0.5712 | Val P 0.6627 | Val R 0.8053
+2026-06-22 12:36:55 - Epoch  63 | Train Loss 0.2152 | Val F1 0.5023 | Val IoU 0.5342 | Val P 0.7351 | Val R 0.6616
+2026-06-22 12:39:00 - Epoch  64 | Train Loss 0.1991 | Val F1 0.5481 | Val IoU 0.5352 | Val P 0.7766 | Val R 0.6326
+2026-06-22 12:41:04 - Epoch  65 | Train Loss 0.2052 | Val F1 0.5219 | Val IoU 0.5703 | Val P 0.6951 | Val R 0.7606
+2026-06-22 12:43:08 - Epoch  66 | Train Loss 0.2071 | Val F1 0.5275 | Val IoU 0.5746 | Val P 0.6732 | Val R 0.7969
+2026-06-22 12:45:13 - Epoch  67 | Train Loss 0.2009 | Val F1 0.4717 | Val IoU 0.5308 | Val P 0.7074 | Val R 0.6802
+2026-06-22 12:47:18 - Epoch  68 | Train Loss 0.2246 | Val F1 0.5345 | Val IoU 0.5735 | Val P 0.7255 | Val R 0.7325
+2026-06-22 12:49:22 - Epoch  69 | Train Loss 0.2153 | Val F1 0.4675 | Val IoU 0.5702 | Val P 0.6740 | Val R 0.7873
+2026-06-22 12:51:20 - Epoch  70 | Train Loss 0.1961 | Val F1 0.5698 | Val IoU 0.5833 | Val P 0.7457 | Val R 0.7282
+2026-06-22 12:53:44 - Epoch  71 | Train Loss 0.1919 | Val F1 0.5402 | Val IoU 0.5486 | Val P 0.7469 | Val R 0.6738
+2026-06-22 12:55:47 - Epoch  72 | Train Loss 0.1916 | Val F1 0.5667 | Val IoU 0.5674 | Val P 0.7379 | Val R 0.7107
+2026-06-22 12:57:52 - Epoch  73 | Train Loss 0.1865 | Val F1 0.4762 | Val IoU 0.5366 | Val P 0.7300 | Val R 0.6695
+2026-06-22 12:59:57 - Epoch  74 | Train Loss 0.2064 | Val F1 0.5851 | Val IoU 0.5939 | Val P 0.7086 | Val R 0.7860
+2026-06-22 12:59:59 -   -> Best F1: 0.5851 [saved]
+2026-06-22 13:02:01 - Epoch  75 | Train Loss 0.2112 | Val F1 0.5680 | Val IoU 0.5637 | Val P 0.7678 | Val R 0.6796
+2026-06-22 13:04:06 - Epoch  76 | Train Loss 0.2083 | Val F1 0.5500 | Val IoU 0.5634 | Val P 0.7404 | Val R 0.7020
+2026-06-22 13:06:12 - Epoch  77 | Train Loss 0.2043 | Val F1 0.5798 | Val IoU 0.5887 | Val P 0.7159 | Val R 0.7681
+2026-06-22 13:08:17 - Epoch  78 | Train Loss 0.1936 | Val F1 0.5564 | Val IoU 0.5419 | Val P 0.7832 | Val R 0.6375
+2026-06-22 13:10:22 - Epoch  79 | Train Loss 0.2047 | Val F1 0.5640 | Val IoU 0.5795 | Val P 0.7479 | Val R 0.7202
+2026-06-22 13:12:27 - Epoch  80 | Train Loss 0.2034 | Val F1 0.5515 | Val IoU 0.5813 | Val P 0.6538 | Val R 0.8397
+2026-06-22 13:14:32 - Epoch  81 | Train Loss 0.2026 | Val F1 0.5673 | Val IoU 0.5801 | Val P 0.7608 | Val R 0.7094
+2026-06-22 13:16:36 - Epoch  82 | Train Loss 0.1788 | Val F1 0.5547 | Val IoU 0.5711 | Val P 0.7468 | Val R 0.7082
+2026-06-22 13:18:30 - Epoch  83 | Train Loss 0.2007 | Val F1 0.5649 | Val IoU 0.5977 | Val P 0.7067 | Val R 0.7949
+2026-06-22 13:20:34 - Epoch  84 | Train Loss 0.1802 | Val F1 0.5239 | Val IoU 0.5728 | Val P 0.7336 | Val R 0.7233
+2026-06-22 13:22:38 - Epoch  85 | Train Loss 0.1916 | Val F1 0.5428 | Val IoU 0.5774 | Val P 0.7522 | Val R 0.7130
+2026-06-22 13:24:43 - Epoch  86 | Train Loss 0.1937 | Val F1 0.5521 | Val IoU 0.6009 | Val P 0.7064 | Val R 0.8009
+2026-06-22 13:26:50 - Epoch  87 | Train Loss 0.1847 | Val F1 0.5654 | Val IoU 0.5846 | Val P 0.6682 | Val R 0.8237
+2026-06-22 13:28:53 - Epoch  88 | Train Loss 0.1933 | Val F1 0.4364 | Val IoU 0.5633 | Val P 0.7138 | Val R 0.7276
+2026-06-22 13:30:58 - Epoch  89 | Train Loss 0.1848 | Val F1 0.5968 | Val IoU 0.5996 | Val P 0.7398 | Val R 0.7598
+2026-06-22 13:31:02 -   -> Best F1: 0.5968 [saved]
+2026-06-22 13:33:02 - Epoch  90 | Train Loss 0.1845 | Val F1 0.5730 | Val IoU 0.6031 | Val P 0.7018 | Val R 0.8108
+2026-06-22 13:35:06 - Epoch  91 | Train Loss 0.2058 | Val F1 0.5093 | Val IoU 0.5645 | Val P 0.7443 | Val R 0.7003
+2026-06-22 13:37:11 - Epoch  92 | Train Loss 0.1900 | Val F1 0.5860 | Val IoU 0.6185 | Val P 0.7101 | Val R 0.8275
+2026-06-22 13:39:16 - Epoch  93 | Train Loss 0.1967 | Val F1 0.5901 | Val IoU 0.6109 | Val P 0.7335 | Val R 0.7852
+2026-06-22 13:41:21 - Epoch  94 | Train Loss 0.2038 | Val F1 0.5325 | Val IoU 0.6014 | Val P 0.7198 | Val R 0.7852
+2026-06-22 13:43:23 - Epoch  95 | Train Loss 0.1897 | Val F1 0.5949 | Val IoU 0.6236 | Val P 0.7292 | Val R 0.8115
+2026-06-22 13:45:15 - Epoch  96 | Train Loss 0.1725 | Val F1 0.5145 | Val IoU 0.5875 | Val P 0.7260 | Val R 0.7549
+2026-06-22 13:47:29 - Epoch  97 | Train Loss 0.1784 | Val F1 0.5725 | Val IoU 0.6139 | Val P 0.7406 | Val R 0.7820
+2026-06-22 13:49:33 - Epoch  98 | Train Loss 0.1778 | Val F1 0.5433 | Val IoU 0.6090 | Val P 0.7318 | Val R 0.7840
+2026-06-22 13:51:37 - Epoch  99 | Train Loss 0.1983 | Val F1 0.5440 | Val IoU 0.5985 | Val P 0.7297 | Val R 0.7691
+2026-06-22 13:53:43 - Epoch 100 | Train Loss 0.1651 | Val F1 0.5290 | Val IoU 0.6043 | Val P 0.7106 | Val R 0.8015
+2026-06-22 13:53:49 - Training done in 3.4h. Best Val F1: 0.5968
+2026-06-22 13:53:49 - === Testing with best model ===
