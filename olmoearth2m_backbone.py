@@ -27,7 +27,7 @@ def _normalize_band_name(value: str) -> str:
 
 
 @MODELS.register_module()
-class OlmoEarth2mBackbone(BaseModule):
+class OlmoEarth2mRGBBackbone(BaseModule):
     """
     OLMoEarth backbone with pre-projection layer: 12 input channels -> 4 channels
     Conv1x1 + BN + ReLU before encoder, keep original OlmoEarth encoder logic unchanged.
@@ -134,14 +134,14 @@ class OlmoEarth2mBackbone(BaseModule):
         if self.init_cfg is None:
             return
         if not isinstance(self.init_cfg, dict):
-            raise TypeError("OlmoEarth2mBackbone init_cfg must be a dict.")
+            raise TypeError("OlmoEarth2mRGBBackbone init_cfg must be a dict.")
         if self.init_cfg.get("type") != "Pretrained":
             super().init_weights()
             return
         checkpoint_path = self.init_cfg.get("checkpoint")
         if checkpoint_path is None:
             raise ValueError(
-                "OlmoEarth2mBackbone init_cfg requires a checkpoint path."
+                "OlmoEarth2mRGBBackbone init_cfg requires a checkpoint path."
             )
         checkpoint = CheckpointLoader.load_checkpoint(
             checkpoint_path,

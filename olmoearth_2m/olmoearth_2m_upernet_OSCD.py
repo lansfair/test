@@ -62,7 +62,7 @@ model = dict(
     pretrained=None,
     backbone_inchannels=backbone_inchannels,
     backbone=dict(
-        type="OlmoEarth2mBackbone",
+        type="OlmoEarth2mRGBBackbone",
         model_config_path=model_config_path,
         init_cfg=dict(type="Pretrained", checkpoint=olmoearth_fm_checkpoint),
         modality="rgb",
