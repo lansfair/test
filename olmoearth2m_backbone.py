@@ -38,7 +38,7 @@ class OlmoEarth2mBackbone(BaseModule):
     def __init__(
         self,
         model_config_path: str,
-        modality: str = "sentinel2_l2a",
+        modality: str = "rgb",
         patch_size: int = 4,
         num_timesteps: int = 12,
         out_channels: int = 768,
@@ -62,6 +62,13 @@ class OlmoEarth2mBackbone(BaseModule):
         self.out_indices = out_indices
         self.raw_bands = raw_bands
         self.proj_target_bands = proj_target_bands
+
+        if self.proj_target_bands != len(self.band_names):
+            raise ValueError(
+                f"proj_target_bands={self.proj_target_bands}, but "
+                f"modality={self.modality!r} expects "
+                f"{len(self.band_names)} bands: {self.band_names}"
+            )
 
         # ========== 新增：12 -> 4 可学习投影块 Conv1x1 + BN + ReLU ==========
         # 单时相维度映射：单帧12波段映射为4波段
@@ -322,7 +329,6 @@ class OlmoEarth2mBackbone(BaseModule):
 
         # 后续完全复用原始流程，送入encoder
         sample = self._make_sample(x_proj_all)
-        print(sample.sentinel2_l2a_mask.unique())
         fast_pass = self.fast_pass
         if fast_pass is None:
             fast_pass = not self._has_missing_tokens(sample)

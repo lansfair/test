@@ -65,7 +65,7 @@ model = dict(
         type="OlmoEarth2mBackbone",
         model_config_path=model_config_path,
         init_cfg=dict(type="Pretrained", checkpoint=olmoearth_fm_checkpoint),
-        modality="sentinel2_l2a",
+        modality="rgb",
         patch_size=patch_size,
         num_timesteps=num_timesteps,
         out_channels=768,
