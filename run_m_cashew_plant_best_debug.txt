@@ -1,0 +1,31 @@
+Run the best m_cashew_plant linear-probe configuration from
+cashew_plant_frozen_patch_size_16.log, with num_workers=0 for debugging:
+
+cd /mnt/ht2-nas2/EO_test/wj1/PASTIS_evel/OEF/olmoearth_pretrain
+
+python -m olmoearth_pretrain.internal.all_evals \
+  --trainer.load_path=/mnt/ht2-nas2/EO_test/model/OlmoEarth-v1-Base \
+  --pre_trained_pth=/mnt/ht2-nas2/EO_test/model/OlmoEarth-v1-Base/weights.pth \
+  --trainer.callbacks.wandb.enabled=False \
+  --trainer.callbacks.downstream_evaluator.tasks_to_run='["m_cashew_plant"]' \
+  --trainer.callbacks.downstream_evaluator.run_on_test=True \
+  --trainer.callbacks.downstream_evaluator.tasks.m_cashew_plant.patch_size=16 \
+  --trainer.callbacks.downstream_evaluator.tasks.m_cashew_plant.pooling_type=mean \
+  --trainer.callbacks.downstream_evaluator.tasks.m_cashew_plant.norm_stats_from_pretrained=False \
+  --trainer.callbacks.downstream_evaluator.tasks.m_cashew_plant.probe_lr=0.05 \
+  --trainer.callbacks.downstream_evaluator.tasks.m_cashew_plant.embedding_batch_size=32 \
+  --trainer.callbacks.downstream_evaluator.tasks.m_cashew_plant.probe_batch_size=8 \
+  --trainer.callbacks.downstream_evaluator.tasks.m_cashew_plant.num_workers=0 \
+  --trainer.callbacks.downstream_evaluator.tasks.m_cashew_plant.eval_mode=linear_probe
+
+Best logged validation-selected configuration:
+patch_size=16
+pooling_type=mean
+norm_stats_from_pretrained=False
+probe_lr=0.05
+embedding_batch_size=32
+probe_batch_size=8
+
+Logged result:
+val_mIoU=0.3556709885597229
+test_mIoU=0.32042986154556274
