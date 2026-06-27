@@ -3,6 +3,8 @@ cashew_plant_frozen_patch_size_16.log, with num_workers=0 for debugging:
 
 cd /mnt/ht2-nas2/EO_test/wj1/PASTIS_evel/OEF/olmoearth_pretrain
 
+export TRAIN_SCRIPT_PATH=/mnt/ht2-nas2/EO_test/wj1/PASTIS_evel/OEF/olmoearth_pretrain/scripts/official/v1/base.py
+
 python -m olmoearth_pretrain.internal.all_evals \
   --trainer.load_path=/mnt/ht2-nas2/EO_test/model/OlmoEarth-v1-Base \
   --pre_trained_pth=/mnt/ht2-nas2/EO_test/model/OlmoEarth-v1-Base/weights.pth \
@@ -29,3 +31,7 @@ probe_batch_size=8
 Logged result:
 val_mIoU=0.3556709885597229
 test_mIoU=0.32042986154556274
+
+Note:
+all_evals.py requires TRAIN_SCRIPT_PATH to point at the model launch script.
+For OlmoEarth-v1-Base, use scripts/official/v1/base.py.
