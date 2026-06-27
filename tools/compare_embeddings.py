@@ -134,12 +134,12 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--original-pt",
-        required=True,
+        default="/mnt/ht2-nas2/EO_test/wj1/PASTIS_evel/OEF/olmoearth_pretrain/val_embeddings/m_cashew_plant_debug.pt",
         help="Path to the .pt file saved from olmoearth_pretrain.",
     )
     parser.add_argument(
         "--mmseg-root",
-        required=True,
+        default="/mnt/ht2-nas2/EO_test/openmmlab-archive/embed/m-cashew-plant/test_patch_size16",
         help="MMSeg embedding output root that contains val.json/test.json.",
     )
     parser.add_argument(
@@ -156,7 +156,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--output-json",
-        default=None,
+        default="/mnt/ht2-nas2/EO_test/wyf/test/m_cashew_plant_debug.json",
         help="Optional path to save detailed comparison results as JSON.",
     )
     return parser.parse_args()
@@ -176,6 +176,7 @@ def main() -> None:
     original_embeddings = _normalize_embeddings(
         _get_split_tensor(payload, split, "embeddings")
     )
+
     original_labels = _normalize_labels(_get_split_tensor(payload, split, "labels"))
 
     manifest = _load_json(manifest_path)
