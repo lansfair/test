@@ -1,5 +1,5 @@
 custom_imports = dict(
-    imports=["projects.olmoearth.m-cashew-plant.olmoearth"],
+    imports=["projects.olmoearth.olmoearth"],
     allow_failed_imports=False,
 )
 
