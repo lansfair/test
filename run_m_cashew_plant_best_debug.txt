@@ -5,7 +5,8 @@ cd /mnt/ht2-nas2/EO_test/wj1/PASTIS_evel/OEF/olmoearth_pretrain
 
 export TRAIN_SCRIPT_PATH=/mnt/ht2-nas2/EO_test/wj1/PASTIS_evel/OEF/olmoearth_pretrain/scripts/official/v1/base.py
 
-python -m olmoearth_pretrain.internal.all_evals \
+torchrun --nproc_per_node=1 -m olmoearth_pretrain.internal.all_evals \
+  evaluate model_OlmoEarth-v1-Base_dataset_lr0.05_ptmean local \
   --trainer.load_path=/mnt/ht2-nas2/EO_test/model/OlmoEarth-v1-Base \
   --pre_trained_pth=/mnt/ht2-nas2/EO_test/model/OlmoEarth-v1-Base/weights.pth \
   --trainer.callbacks.wandb.enabled=False \
