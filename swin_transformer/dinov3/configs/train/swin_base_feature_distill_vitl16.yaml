@@ -1,0 +1,94 @@
+MODEL:
+  META_ARCHITECTURE: SSLFeatureDistillationMetaArch  # modified by zhoujiwen
+  DEVICE: cuda
+  WEIGHTS: ''
+  DTYPE: float32
+
+feature_distill:  # modified by zhoujiwen
+  teacher_arch: vit_7b  # modified by zhoujiwen
+  teacher_patch_size: 16
+  teacher_checkpoint: /mnt/ht2_nas2/00-model/00-zhoujw/dinov3-swin-distill-7B-with-gram/checkpoints/dinov3_vit7b16_pretrain_lvd1689m-a955f4ea.pth  # modified by zhoujiwen
+  val_dataset_path: FlatJPG:split=VAL:root=/mnt/qh2-nas3/EO_Pretrian_Data_global/Million-AID/extracted/test/test/:seed=42:train_ratio=0.0  # modified by zhoujiwen
+  val_period_iterations: 3871  # modified by zhoujiwen
+  val_max_batches: 128
+  early_stopping_patience: -1  # modified by zhoujiwen: disable early stopping.
+# /mnt/qh2-nas3/00-model/00-wrs/ImageNet22k/image_txt
+student:
+  arch: swin_base
+  patch_size: 4
+  drop_path_rate: 0.2
+  qkv_bias: true
+  norm_layer: layernorm
+  n_storage_tokens: 0
+  untie_cls_and_patch_norms: true
+  untie_global_and_local_cls_norm: false
+
+dino:
+  loss_weight: 1.0  # modified by zhoujiwen
+  koleo_loss_weight: 0.1
+
+ibot:
+  loss_weight: 1.0  # modified by zhoujiwen
+  mask_sample_probability: 0.5
+  mask_ratio_min_max: [0.1, 0.5]
+  mask_random_circular_shift: false
+
+gram:
+  use_loss: true  # modified by zhoujiwen
+  loss_weight: 1.0  # modified by zhoujiwen
+  tokens_used: all  # modified by zhoujiwen
+  img_level: true  # modified by zhoujiwen
+
+crops:
+  global_crops_size: 256  # modified by zhoujiwen
+  local_crops_size: 112  # modified by zhoujiwen
+  global_crops_scale: [0.32, 1.0]  # modified by zhoujiwen
+  local_crops_scale: [0.05, 0.32]  # modified by zhoujiwen
+  local_crops_number: 8
+  rgb_mean: [0.485, 0.456, 0.406]
+  rgb_std: [0.229, 0.224, 0.225]
+  horizontal_flips: true
+
+train:
+  dataset_path: FlatJPG:split=TRAIN:root=/mnt/qh2-nas3/EO_Pretrian_Data_global/Million-AID/extracted/train/train/:seed=42:train_ratio=1.0  # modified by zhoujiwen
+  batch_size_per_gpu: 16  # modified by zhoujiwen
+  output_dir: outputs/swin_base_vitl16_feature_distill_new
+  num_workers: 4
+  OFFICIAL_EPOCH_LENGTH: 3871  # modified by zhoujiwen
+  seed: 42
+  cache_dataset: false
+  centering: sinkhorn_knopp
+  checkpointing: true
+  compile: false
+
+optim:
+  epochs: 30  # modified by zhoujiwen
+  optimizer: adamw
+  lr: 5.0e-5
+  min_lr: 1.0e-6
+  warmup_epochs: 10
+  weight_decay: 0.05
+  weight_decay_end: 0.2
+  layerwise_decay: 0.9
+  clip_grad: 3.0
+  freeze_last_layer_epochs: 0
+
+teacher:
+  momentum_teacher: 0.996
+  final_momentum_teacher: 1.0
+  warmup_teacher_temp: 0.04
+  teacher_temp: 0.07
+  warmup_teacher_temp_epochs: 10
+
+evaluation:
+  eval_period_iterations: 0
+
+checkpointing:
+  period: 100  # modified by zhoujiwen
+  max_to_keep: 5
+  keep_every: 22500
+
+compute_precision:
+  param_dtype: bf16
+  reduce_dtype: fp32
+  sharding_strategy: SHARD_GRAD_OP
