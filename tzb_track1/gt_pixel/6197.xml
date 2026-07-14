@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+	<source>
+		<filename>6197.tif</filename>
+		<origin>Optical</origin>
+	</source>
+	<research>
+		<version>1.0</version>
+		<author>Cyber</author>
+		<pluginclass>object detection</pluginclass>
+		<time>2021-07-21</time>
+	</research>
+	<size>
+		<width>1000</width>
+		<height>1000</height>
+		<depth>3</depth>
+	</size>
+	<objects>
+		<object>
+			<coordinate>pixel</coordinate>
+			<type>rectangle</type>
+			<description>None</description>
+			<possibleresult>
+				<name>Dump Truck</name>
+			</possibleresult>
+			<points>
+				<point>1000.000000,407.307648</point>
+				<point>977.617554,409.029388</point>
+				<point>976.999878,400.999969</point>
+				<point>1000.000000,399.230713</point>
+				<point>1000.000000,407.307648</point>
+			</points>
+		</object>
+		<object>
+			<coordinate>pixel</coordinate>
+			<type>rectangle</type>
+			<description>None</description>
+			<possibleresult>
+				<name>Dump Truck</name>
+			</possibleresult>
+			<points>
+				<point>827.000000,463.000000</point>
+				<point>796.000000,465.000000</point>
+				<point>796.000000,456.000000</point>
+				<point>826.000000,454.000000</point>
+				<point>827.000000,463.000000</point>
+			</points>
+		</object>
+	</objects>
+</annotation>

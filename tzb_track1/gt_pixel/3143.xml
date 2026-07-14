@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+	<source>
+		<filename>3143.tif</filename>
+		<origin>Optical</origin>
+	</source>
+	<research>
+		<version>1.0</version>
+		<author>Cyber</author>
+		<pluginclass>object detection</pluginclass>
+		<time>2021-07-21</time>
+	</research>
+	<size>
+		<width>600</width>
+		<height>800</height>
+		<depth>4</depth>
+	</size>
+	<objects>
+		<object>
+			<coordinate>pixel</coordinate>
+			<type>rectangle</type>
+			<description>None</description>
+			<possibleresult>
+				<name>Dump Truck</name>
+			</possibleresult>
+			<points>
+				<point>447.000000,757.000000</point>
+				<point>422.000000,760.000000</point>
+				<point>421.000000,753.000000</point>
+				<point>446.000000,750.000000</point>
+				<point>447.000000,757.000000</point>
+			</points>
+		</object>
+		<object>
+			<coordinate>pixel</coordinate>
+			<type>rectangle</type>
+			<description>None</description>
+			<possibleresult>
+				<name>Dump Truck</name>
+			</possibleresult>
+			<points>
+				<point>600.000000,381.000000</point>
+				<point>590.000000,369.000000</point>
+				<point>596.000000,364.000000</point>
+				<point>600.000000,367.000000</point>
+				<point>600.000000,381.000000</point>
+			</points>
+		</object>
+		<object>
+			<coordinate>pixel</coordinate>
+			<type>rectangle</type>
+			<description>None</description>
+			<possibleresult>
+				<name>Dump Truck</name>
+			</possibleresult>
+			<points>
+				<point>579.000000,337.000000</point>
+				<point>569.000000,339.000000</point>
+				<point>566.000000,319.000000</point>
+				<point>576.000000,317.000000</point>
+				<point>579.000000,337.000000</point>
+			</points>
+		</object>
+		<object>
+			<coordinate>pixel</coordinate>
+			<type>rectangle</type>
+			<description>None</description>
+			<possibleresult>
+				<name>Small Car</name>
+			</possibleresult>
+			<points>
+				<point>286.000000,310.000000</point>
+				<point>274.000000,324.000000</point>
+				<point>268.000000,319.000000</point>
+				<point>279.000000,305.000000</point>
+				<point>286.000000,310.000000</point>
+			</points>
+		</object>
+	</objects>
+</annotation>

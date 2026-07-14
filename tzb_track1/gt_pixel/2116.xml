@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+	<source>
+		<filename>2116.tif</filename>
+		<origin>Optical</origin>
+	</source>
+	<research>
+		<version>1.0</version>
+		<author>Cyber</author>
+		<pluginclass>object detection</pluginclass>
+		<time>2021-07-21</time>
+	</research>
+	<size>
+		<width>1000</width>
+		<height>1000</height>
+		<depth>4</depth>
+	</size>
+	<objects>
+		<object>
+			<coordinate>pixel</coordinate>
+			<type>rectangle</type>
+			<description>None</description>
+			<possibleresult>
+				<name>Cargo Truck</name>
+			</possibleresult>
+			<points>
+				<point>778.000000,967.000000</point>
+				<point>739.000000,974.000000</point>
+				<point>737.000000,961.000000</point>
+				<point>776.000000,955.000000</point>
+				<point>778.000000,967.000000</point>
+			</points>
+		</object>
+		<object>
+			<coordinate>pixel</coordinate>
+			<type>rectangle</type>
+			<description>None</description>
+			<possibleresult>
+				<name>Cargo Truck</name>
+			</possibleresult>
+			<points>
+				<point>827.000000,926.000000</point>
+				<point>813.000000,929.000000</point>
+				<point>804.000000,886.000000</point>
+				<point>819.000000,883.000000</point>
+				<point>827.000000,926.000000</point>
+			</points>
+		</object>
+		<object>
+			<coordinate>pixel</coordinate>
+			<type>rectangle</type>
+			<description>None</description>
+			<possibleresult>
+				<name>Cargo Truck</name>
+			</possibleresult>
+			<points>
+				<point>565.000000,857.000000</point>
+				<point>537.000000,862.000000</point>
+				<point>536.000000,852.000000</point>
+				<point>563.000000,847.000000</point>
+				<point>565.000000,857.000000</point>
+			</points>
+		</object>
+	</objects>
+</annotation>

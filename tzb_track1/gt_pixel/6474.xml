@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+	<source>
+		<filename>6474.tif</filename>
+		<origin>Optical</origin>
+	</source>
+	<research>
+		<version>1.0</version>
+		<author>Cyber</author>
+		<pluginclass>object detection</pluginclass>
+		<time>2021-07-21</time>
+	</research>
+	<size>
+		<width>800</width>
+		<height>600</height>
+		<depth>4</depth>
+	</size>
+	<objects>
+		<object>
+			<coordinate>pixel</coordinate>
+			<type>rectangle</type>
+			<description>None</description>
+			<possibleresult>
+				<name>Small Car</name>
+			</possibleresult>
+			<points>
+				<point>746.000000,547.000000</point>
+				<point>734.000000,560.000000</point>
+				<point>728.000000,555.000000</point>
+				<point>741.000000,542.000000</point>
+				<point>746.000000,547.000000</point>
+			</points>
+		</object>
+		<object>
+			<coordinate>pixel</coordinate>
+			<type>rectangle</type>
+			<description>None</description>
+			<possibleresult>
+				<name>Small Car</name>
+			</possibleresult>
+			<points>
+				<point>269.000000,522.000000</point>
+				<point>264.000000,529.000000</point>
+				<point>244.000000,516.000000</point>
+				<point>249.000000,509.000000</point>
+				<point>269.000000,522.000000</point>
+			</points>
+		</object>
+	</objects>
+</annotation>

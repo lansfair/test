@@ -1,0 +1,15 @@
+{
+  "source_xml_dir": "G:\\data\\car_det_train\\gt",
+  "output_xml_dir": "G:\\data\\car_det_train\\gt_pixel",
+  "xml_files": 9445,
+  "converted_images": 3,
+  "converted_image_ids": [
+    "5733",
+    "6661",
+    "8863"
+  ],
+  "converted_objects": 118,
+  "preferred_backend": "rasterio",
+  "max_geographic_span": 0.01,
+  "pixel_tolerance": 2.0
+}

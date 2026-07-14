@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+	<source>
+		<filename>4710.tif</filename>
+		<origin>Optical</origin>
+	</source>
+	<research>
+		<version>1.0</version>
+		<author>Cyber</author>
+		<pluginclass>object detection</pluginclass>
+		<time>2021-07-21</time>
+	</research>
+	<size>
+		<width>1000</width>
+		<height>1000</height>
+		<depth>3</depth>
+	</size>
+	<objects>
+		<object>
+			<coordinate>pixel</coordinate>
+			<type>rectangle</type>
+			<description>None</description>
+			<possibleresult>
+				<name>Small Car</name>
+			</possibleresult>
+			<points>
+				<point>105.000000,761.000000</point>
+				<point>87.000000,760.000000</point>
+				<point>88.000000,752.000000</point>
+				<point>105.000000,753.000000</point>
+				<point>105.000000,761.000000</point>
+			</points>
+		</object>
+		<object>
+			<coordinate>pixel</coordinate>
+			<type>rectangle</type>
+			<description>None</description>
+			<possibleresult>
+				<name>Dump Truck</name>
+			</possibleresult>
+			<points>
+				<point>20.000000,623.000000</point>
+				<point>7.000000,624.000000</point>
+				<point>7.000000,602.000000</point>
+				<point>20.000000,602.000000</point>
+				<point>20.000000,623.000000</point>
+			</points>
+		</object>
+		<object>
+			<coordinate>pixel</coordinate>
+			<type>rectangle</type>
+			<description>None</description>
+			<possibleresult>
+				<name>Van</name>
+			</possibleresult>
+			<points>
+				<point>23.000000,653.000000</point>
+				<point>12.000000,653.000000</point>
+				<point>12.000000,636.000000</point>
+				<point>23.000000,635.000000</point>
+				<point>23.000000,653.000000</point>
+			</points>
+		</object>
+		<object>
+			<coordinate>pixel</coordinate>
+			<type>rectangle</type>
+			<description>None</description>
+			<possibleresult>
+				<name>Dump Truck</name>
+			</possibleresult>
+			<points>
+				<point>57.000000,485.000000</point>
+				<point>29.000000,485.000000</point>
+				<point>29.000000,476.000000</point>
+				<point>57.000000,476.000000</point>
+				<point>57.000000,485.000000</point>
+			</points>
+		</object>
+	</objects>
+</annotation>

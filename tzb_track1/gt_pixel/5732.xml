@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+	<source>
+		<filename>5732.tif</filename>
+		<origin>Optical</origin>
+	</source>
+	<research>
+		<version>1.0</version>
+		<author>Cyber</author>
+		<pluginclass>object detection</pluginclass>
+		<time>2021-07-21</time>
+	</research>
+	<size>
+		<width>600</width>
+		<height>800</height>
+		<depth>4</depth>
+	</size>
+	<objects>
+		<object>
+			<coordinate>pixel</coordinate>
+			<type>rectangle</type>
+			<description>None</description>
+			<possibleresult>
+				<name>Small Car</name>
+			</possibleresult>
+			<points>
+				<point>379.000000,68.000000</point>
+				<point>376.000000,78.000000</point>
+				<point>355.000000,72.000000</point>
+				<point>358.000000,62.000000</point>
+				<point>379.000000,68.000000</point>
+			</points>
+		</object>
+		<object>
+			<coordinate>pixel</coordinate>
+			<type>rectangle</type>
+			<description>None</description>
+			<possibleresult>
+				<name>Small Car</name>
+			</possibleresult>
+			<points>
+				<point>359.000000,115.000000</point>
+				<point>357.000000,123.000000</point>
+				<point>334.000000,117.000000</point>
+				<point>336.000000,109.000000</point>
+				<point>359.000000,115.000000</point>
+			</points>
+		</object>
+		<object>
+			<coordinate>pixel</coordinate>
+			<type>rectangle</type>
+			<description>None</description>
+			<possibleresult>
+				<name>Dump Truck</name>
+			</possibleresult>
+			<points>
+				<point>186.000000,261.000000</point>
+				<point>170.000000,283.000000</point>
+				<point>161.000000,276.000000</point>
+				<point>177.000000,254.000000</point>
+				<point>186.000000,261.000000</point>
+			</points>
+		</object>
+		<object>
+			<coordinate>pixel</coordinate>
+			<type>rectangle</type>
+			<description>None</description>
+			<possibleresult>
+				<name>Dump Truck</name>
+			</possibleresult>
+			<points>
+				<point>166.000000,251.000000</point>
+				<point>151.000000,274.000000</point>
+				<point>140.000000,266.000000</point>
+				<point>155.000000,244.000000</point>
+				<point>166.000000,251.000000</point>
+			</points>
+		</object>
+		<object>
+			<coordinate>pixel</coordinate>
+			<type>rectangle</type>
+			<description>None</description>
+			<possibleresult>
+				<name>Small Car</name>
+			</possibleresult>
+			<points>
+				<point>211.000000,225.000000</point>
+				<point>201.000000,240.000000</point>
+				<point>193.000000,234.000000</point>
+				<point>203.000000,219.000000</point>
+				<point>211.000000,225.000000</point>
+			</points>
+		</object>
+		<object>
+			<coordinate>pixel</coordinate>
+			<type>rectangle</type>
+			<description>None</description>
+			<possibleresult>
+				<name>Dump Truck</name>
+			</possibleresult>
+			<points>
+				<point>240.000000,74.000000</point>
+				<point>236.000000,84.000000</point>
+				<point>208.000000,73.000000</point>
+				<point>212.000000,63.000000</point>
+				<point>240.000000,74.000000</point>
+			</points>
+		</object>
+		<object>
+			<coordinate>pixel</coordinate>
+			<type>rectangle</type>
+			<description>None</description>
+			<possibleresult>
+				<name>Dump Truck</name>
+			</possibleresult>
+			<points>
+				<point>235.000000,229.000000</point>
+				<point>222.000000,250.000000</point>
+				<point>212.000000,244.000000</point>
+				<point>226.000000,223.000000</point>
+				<point>235.000000,229.000000</point>
+			</points>
+		</object>
+	</objects>
+</annotation>

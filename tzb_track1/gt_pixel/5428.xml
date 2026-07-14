@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<annotation>
+	<source>
+		<filename>5428.tif</filename>
+		<origin>Optical</origin>
+	</source>
+	<research>
+		<version>1.0</version>
+		<author>Cyber</author>
+		<pluginclass>object detection</pluginclass>
+		<time>2021-07-21</time>
+	</research>
+	<size>
+		<width>800</width>
+		<height>600</height>
+		<depth>4</depth>
+	</size>
+	<objects>
+		<object>
+			<coordinate>pixel</coordinate>
+			<type>rectangle</type>
+			<description>None</description>
+			<possibleresult>
+				<name>Bus</name>
+			</possibleresult>
+			<points>
+				<point>48.000000,514.000000</point>
+				<point>42.000000,524.000000</point>
+				<point>12.000000,507.000000</point>
+				<point>18.000000,497.000000</point>
+				<point>48.000000,514.000000</point>
+			</points>
+		</object>
+	</objects>
+</annotation>
