@@ -1,0 +1,132 @@
+{
+  "data_root": "G:\\data\\car_det_train",
+  "decoder": "reused_validation_csv",
+  "seed": 3407,
+  "requested_val_ratio": 0.2,
+  "total_pairs": 9445,
+  "valid_images": 9442,
+  "invalid_images": 3,
+  "exact_duplicates_dropped": 133,
+  "duplicate_class_count_mismatches": 85,
+  "duplicate_annotation_mismatches": 132,
+  "unique_images": 9309,
+  "train_images": 7447,
+  "val_images": 1862,
+  "actual_val_ratio": 0.2000214845848104,
+  "invalid_samples": [
+    {
+      "image_id": "85",
+      "error": "RasterioIOError: Read failed. See previous exception for details."
+    },
+    {
+      "image_id": "3057",
+      "error": "empty_image"
+    },
+    {
+      "image_id": "3250",
+      "error": "RasterioIOError: Read failed. See previous exception for details."
+    }
+  ],
+  "class_summary": {
+    "Small Car": {
+      "all_images": 8798,
+      "train_images": 7038,
+      "val_images": 1760,
+      "val_image_ratio": 0.20004546487838146,
+      "all_instances": 202599,
+      "train_instances": 162079,
+      "val_instances": 40520,
+      "val_instance_ratio": 0.2000009871717037
+    },
+    "Van": {
+      "all_images": 8865,
+      "train_images": 7092,
+      "val_images": 1773,
+      "val_image_ratio": 0.2,
+      "all_instances": 196530,
+      "train_instances": 157224,
+      "val_instances": 39306,
+      "val_instance_ratio": 0.2
+    },
+    "Dump Truck": {
+      "all_images": 6891,
+      "train_images": 5513,
+      "val_images": 1378,
+      "val_image_ratio": 0.19997097663619212,
+      "all_instances": 33232,
+      "train_instances": 26586,
+      "val_instances": 6646,
+      "val_instance_ratio": 0.19998796340876263
+    },
+    "Cargo Truck": {
+      "all_images": 3755,
+      "train_images": 3004,
+      "val_images": 751,
+      "val_image_ratio": 0.2,
+      "all_instances": 16068,
+      "train_instances": 12854,
+      "val_instances": 3214,
+      "val_instance_ratio": 0.20002489419965147
+    },
+    "other-vehicle": {
+      "all_images": 2038,
+      "train_images": 1630,
+      "val_images": 408,
+      "val_image_ratio": 0.20019627085377822,
+      "all_instances": 6352,
+      "train_instances": 5082,
+      "val_instances": 1270,
+      "val_instance_ratio": 0.19993702770780855
+    },
+    "Bus": {
+      "all_images": 765,
+      "train_images": 612,
+      "val_images": 153,
+      "val_image_ratio": 0.2,
+      "all_instances": 1624,
+      "train_instances": 1299,
+      "val_instances": 325,
+      "val_instance_ratio": 0.2001231527093596
+    },
+    "Truck Tractor": {
+      "all_images": 193,
+      "train_images": 154,
+      "val_images": 39,
+      "val_image_ratio": 0.20207253886010362,
+      "all_instances": 1303,
+      "train_instances": 1042,
+      "val_instances": 261,
+      "val_instance_ratio": 0.2003069838833461
+    },
+    "Excavator": {
+      "all_images": 549,
+      "train_images": 439,
+      "val_images": 110,
+      "val_image_ratio": 0.20036429872495445,
+      "all_instances": 1276,
+      "train_instances": 1021,
+      "val_instances": 255,
+      "val_instance_ratio": 0.19984326018808776
+    },
+    "Trailer": {
+      "all_images": 526,
+      "train_images": 421,
+      "val_images": 105,
+      "val_image_ratio": 0.19961977186311788,
+      "all_instances": 1165,
+      "train_instances": 932,
+      "val_instances": 233,
+      "val_instance_ratio": 0.2
+    },
+    "Tractor": {
+      "all_images": 119,
+      "train_images": 95,
+      "val_images": 24,
+      "val_image_ratio": 0.20168067226890757,
+      "all_instances": 299,
+      "train_instances": 239,
+      "val_instances": 60,
+      "val_instance_ratio": 0.20066889632107024
+    }
+  }
+}
