@@ -1,0 +1,775 @@
+2026/07/15 12:01:25 - mmengine - INFO - 
+------------------------------------------------------------
+System environment:
+    sys.platform: linux
+    Python: 3.10.8 (main, Nov 24 2022, 14:13:03) [GCC 11.2.0]
+    CUDA available: True
+    MUSA available: False
+    numpy_random_seed: 1973254747
+    GPU 0,1,2,3: NVIDIA A100-SXM4-80GB
+    CUDA_HOME: /usr/local/cuda
+    NVCC: Cuda compilation tools, release 12.6, V12.6.85
+    GCC: gcc (Ubuntu 9.4.0-1ubuntu1~20.04.2) 9.4.0
+    PyTorch: 2.0.1+cu118
+    PyTorch compiling details: PyTorch built with:
+  - GCC 9.3
+  - C++ Version: 201703
+  - Intel(R) oneAPI Math Kernel Library Version 2025.0-Product Build 20241009 for Intel(R) 64 architecture applications
+  - Intel(R) MKL-DNN v2.7.3 (Git Hash 6dbeffbae1f23cbbeae17adb7b5b13f1f37c080e)
+  - OpenMP 201511 (a.k.a. OpenMP 4.5)
+  - LAPACK is enabled (usually provided by MKL)
+  - NNPACK is enabled
+  - CPU capability usage: AVX2
+  - CUDA Runtime 11.8
+  - NVCC architecture flags: -gencode;arch=compute_37,code=sm_37;-gencode;arch=compute_50,code=sm_50;-gencode;arch=compute_60,code=sm_60;-gencode;arch=compute_70,code=sm_70;-gencode;arch=compute_75,code=sm_75;-gencode;arch=compute_80,code=sm_80;-gencode;arch=compute_86,code=sm_86;-gencode;arch=compute_90,code=sm_90
+  - CuDNN 8.7
+  - Magma 2.6.1
+  - Build settings: BLAS_INFO=mkl, BUILD_TYPE=Release, CUDA_VERSION=11.8, CUDNN_VERSION=8.7.0, CXX_COMPILER=/opt/rh/devtoolset-9/root/usr/bin/c++, CXX_FLAGS= -D_GLIBCXX_USE_CXX11_ABI=0 -fabi-version=11 -Wno-deprecated -fvisibility-inlines-hidden -DUSE_PTHREADPOOL -DNDEBUG -DUSE_KINETO -DLIBKINETO_NOROCTRACER -DUSE_FBGEMM -DUSE_QNNPACK -DUSE_PYTORCH_QNNPACK -DUSE_XNNPACK -DSYMBOLICATE_MOBILE_DEBUG_HANDLE -O2 -fPIC -Wall -Wextra -Werror=return-type -Werror=non-virtual-dtor -Werror=bool-operation -Wnarrowing -Wno-missing-field-initializers -Wno-type-limits -Wno-array-bounds -Wno-unknown-pragmas -Wunused-local-typedefs -Wno-unused-parameter -Wno-unused-function -Wno-unused-result -Wno-strict-overflow -Wno-strict-aliasing -Wno-error=deprecated-declarations -Wno-stringop-overflow -Wno-psabi -Wno-error=pedantic -Wno-error=redundant-decls -Wno-error=old-style-cast -fdiagnostics-color=always -faligned-new -Wno-unused-but-set-variable -Wno-maybe-uninitialized -fno-math-errno -fno-trapping-math -Werror=format -Werror=cast-function-type -Wno-stringop-overflow, LAPACK_INFO=mkl, PERF_WITH_AVX=1, PERF_WITH_AVX2=1, PERF_WITH_AVX512=1, TORCH_DISABLE_GPU_ASSERTS=ON, TORCH_VERSION=2.0.1, USE_CUDA=ON, USE_CUDNN=ON, USE_EXCEPTION_PTR=1, USE_GFLAGS=OFF, USE_GLOG=OFF, USE_MKL=ON, USE_MKLDNN=ON, USE_MPI=OFF, USE_NCCL=1, USE_NNPACK=ON, USE_OPENMP=ON, USE_ROCM=OFF, 
+
+    TorchVision: 0.15.2+cu118
+    OpenCV: 4.10.0
+    MMEngine: 0.10.7
+
+Runtime environment:
+    cudnn_benchmark: True
+    dist_cfg: {'backend': 'nccl'}
+    mp_cfg: {'mp_start_method': 'fork', 'opencv_num_threads': 0}
+    seed: 1973254747
+    Distributed launcher: none
+    Distributed training: False
+    GPU number: 1
+------------------------------------------------------------
+
+2026/07/15 12:01:25 - mmengine - INFO - Config:
+angle_version = 'le90'
+auto_scale_lr = dict(base_batch_size=16, enable=False)
+checkpoint = '/mnt/ht2-nas2/EO_test/wyf/tzb/weights/lsk_s_backbone-e9d2e551.pth'
+custom_hooks = [
+    dict(type='mmdet.NumClassCheckHook'),
+    dict(
+        ema_type='mmdet.ExpMomentumEMA',
+        momentum=0.0002,
+        priority=49,
+        type='EMAHook',
+        update_buffers=True),
+]
+custom_imports = dict(
+    allow_failed_imports=False,
+    imports=[
+        'projects.tianzhibei_car',
+        'projects.LSKNet.lsknet',
+    ])
+data_root = '/mnt/ht2-nas2/EO_test/wyf/tzb/data/car_det_train'
+dataset_common = dict(
+    boundary_mode='refit',
+    data_prefix=dict(ann_path='gt/', img_path='input_path/'),
+    data_root='/mnt/ht2-nas2/EO_test/wyf/tzb/data/car_det_train',
+    drop_invalid=True,
+    filter_cfg=dict(filter_empty_gt=True),
+    img_suffix='.tif',
+    min_box_area=1.0,
+    min_box_side=1.0,
+    min_visible_ratio=0.5,
+    type='TianzhibeiCarDataset')
+default_hooks = dict(
+    checkpoint=dict(
+        interval=2,
+        max_keep_ckpts=3,
+        save_best='auto',
+        save_last=True,
+        type='CheckpointHook'),
+    logger=dict(interval=50, type='LoggerHook'),
+    param_scheduler=dict(type='ParamSchedulerHook'),
+    sampler_seed=dict(type='DistSamplerSeedHook'),
+    timer=dict(type='IterTimerHook'),
+    visualization=dict(type='mmdet.DetVisualizationHook'))
+default_scope = 'mmrotate'
+env_cfg = dict(
+    cudnn_benchmark=True,
+    dist_cfg=dict(backend='nccl'),
+    mp_cfg=dict(mp_start_method='fork', opencv_num_threads=0))
+formal_val_pipeline = [
+    dict(alpha_policy='ignore', type='LoadGeoTiffRGB'),
+    dict(box_type='qbox', type='mmdet.LoadAnnotations', with_bbox=True),
+    dict(box_type_mapping=dict(gt_bboxes='rbox'), type='ConvertBoxType'),
+    dict(size=1024, type='ResizeAndPad'),
+    dict(
+        meta_keys=(
+            'img_id',
+            'img_path',
+            'ori_shape',
+            'img_shape',
+            'scale_factor',
+            'geo_transform',
+            'projection',
+        ),
+        type='mmdet.PackDetInputs'),
+]
+launcher = 'none'
+load_from = './work_dirs/lsknet-s_fpn_smoothl1_baseline_40e/epoch_40.pth'
+log_level = 'INFO'
+log_processor = dict(by_epoch=True, type='LogProcessor', window_size=50)
+model = dict(
+    backbone=dict(
+        depths=[
+            2,
+            2,
+            4,
+            2,
+        ],
+        drop_path_rate=0.1,
+        drop_rate=0.1,
+        embed_dims=[
+            64,
+            128,
+            320,
+            512,
+        ],
+        init_cfg=dict(
+            checkpoint=
+            '/mnt/ht2-nas2/EO_test/wyf/tzb/weights/lsk_s_backbone-e9d2e551.pth',
+            type='Pretrained'),
+        norm_cfg=dict(requires_grad=True, type='SyncBN'),
+        type='LSKNet'),
+    data_preprocessor=dict(
+        bgr_to_rgb=True,
+        boxtype2tensor=False,
+        mean=[
+            123.675,
+            116.28,
+            103.53,
+        ],
+        pad_size_divisor=32,
+        std=[
+            58.395,
+            57.12,
+            57.375,
+        ],
+        type='mmdet.DetDataPreprocessor'),
+    neck=dict(
+        in_channels=[
+            64,
+            128,
+            320,
+            512,
+        ],
+        num_outs=5,
+        out_channels=256,
+        type='mmdet.FPN'),
+    roi_head=dict(
+        bbox_head=dict(
+            bbox_coder=dict(
+                angle_version='le90',
+                edge_swap=True,
+                norm_factor=None,
+                proj_xy=True,
+                target_means=(
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0,
+                ),
+                target_stds=(
+                    0.1,
+                    0.1,
+                    0.2,
+                    0.2,
+                    0.1,
+                ),
+                type='DeltaXYWHTRBBoxCoder'),
+            cls_predictor_cfg=dict(type='mmdet.Linear'),
+            fc_out_channels=1024,
+            in_channels=256,
+            loss_bbox=dict(
+                beta=1.0, loss_weight=1.0, type='mmdet.SmoothL1Loss'),
+            loss_bbox_type='normal',
+            loss_cls=dict(
+                label_smoothing=0.05,
+                loss_weight=1.0,
+                type='LabelSmoothCrossEntropyLoss'),
+            num_classes=10,
+            predict_box_type='rbox',
+            reg_class_agnostic=True,
+            reg_predictor_cfg=dict(type='mmdet.Linear'),
+            roi_feat_size=7,
+            type='RotatedShared2FCBBoxHead'),
+        bbox_roi_extractor=dict(
+            featmap_strides=[
+                4,
+                8,
+                16,
+                32,
+            ],
+            out_channels=256,
+            roi_layer=dict(
+                clockwise=True,
+                out_size=7,
+                sample_num=2,
+                type='RoIAlignRotated'),
+            type='RotatedSingleRoIExtractor'),
+        type='mmdet.StandardRoIHead'),
+    rpn_head=dict(
+        anchor_generator=dict(
+            ratios=[
+                0.25,
+                0.5,
+                1.0,
+                2.0,
+                4.0,
+            ],
+            scales=[
+                4,
+            ],
+            strides=[
+                4,
+                8,
+                16,
+                32,
+                64,
+            ],
+            type='mmdet.AnchorGenerator',
+            use_box_type=True),
+        bbox_coder=dict(
+            angle_version='le90',
+            target_means=[
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+            ],
+            target_stds=[
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                0.5,
+                0.5,
+            ],
+            type='MidpointOffsetCoder'),
+        feat_channels=256,
+        in_channels=256,
+        loss_bbox=dict(
+            beta=0.1111111111111111,
+            loss_weight=1.0,
+            type='mmdet.SmoothL1Loss'),
+        loss_cls=dict(
+            loss_weight=1.0, type='mmdet.CrossEntropyLoss', use_sigmoid=True),
+        type='OrientedRPNHead'),
+    test_cfg=dict(
+        rcnn=dict(
+            max_per_img=1000,
+            min_bbox_size=0,
+            nms=dict(iou_threshold=0.1, type='nms_rotated'),
+            nms_pre=2000,
+            score_thr=0.01),
+        rpn=dict(
+            max_per_img=2000,
+            min_bbox_size=0,
+            nms=dict(iou_threshold=0.8, type='nms'),
+            nms_pre=8000)),
+    train_cfg=dict(
+        rcnn=dict(
+            assigner=dict(
+                ignore_iof_thr=-1,
+                iou_calculator=dict(type='RBboxOverlaps2D'),
+                match_low_quality=False,
+                min_pos_iou=0.5,
+                neg_iou_thr=0.5,
+                pos_iou_thr=0.5,
+                type='mmdet.MaxIoUAssigner'),
+            debug=False,
+            pos_weight=-1,
+            sampler=dict(
+                add_gt_as_proposals=True,
+                neg_pos_ub=-1,
+                num=512,
+                pos_fraction=0.25,
+                type='mmdet.RandomSampler')),
+        rpn=dict(
+            allowed_border=-1,
+            assigner=dict(
+                ignore_iof_thr=-1,
+                iou_calculator=dict(type='RBbox2HBboxOverlaps2D'),
+                match_low_quality=True,
+                min_pos_iou=0.3,
+                neg_iou_thr=0.3,
+                pos_iou_thr=0.5,
+                type='mmdet.MaxIoUAssigner'),
+            debug=False,
+            pos_weight=-1,
+            sampler=dict(
+                add_gt_as_proposals=False,
+                neg_pos_ub=-1,
+                num=512,
+                pos_fraction=0.5,
+                type='mmdet.RandomSampler')),
+        rpn_proposal=dict(
+            max_per_img=2000,
+            min_bbox_size=0,
+            nms=dict(iou_threshold=0.8, type='nms'),
+            nms_pre=8000)),
+    type='mmdet.FasterRCNN')
+model_wrapper_cfg = dict(
+    bucket_cap_mb=50,
+    find_unused_parameters=False,
+    gradient_as_bucket_view=True,
+    type='MMDistributedDataParallel')
+num_classes = 10
+optim_wrapper = dict(
+    accumulative_counts=1,
+    clip_grad=dict(max_norm=35, norm_type=2),
+    loss_scale=dict(growth_interval=1000, init_scale=512.0),
+    optimizer=dict(
+        betas=(
+            0.9,
+            0.999,
+        ),
+        fused=True,
+        lr=0.0002,
+        type='AdamW',
+        weight_decay=0.05),
+    paramwise_cfg=dict(
+        bias_decay_mult=0.0, bypass_duplicate=True, norm_decay_mult=0.0),
+    type='AmpOptimWrapper')
+param_scheduler = [
+    dict(
+        begin=0,
+        by_epoch=False,
+        end=125,
+        start_factor=0.3333333333333333,
+        type='LinearLR'),
+    dict(
+        T_max=40,
+        begin=0,
+        by_epoch=True,
+        end=40,
+        eta_min=2e-06,
+        type='CosineAnnealingLR'),
+]
+resume = False
+stage_a_pipeline = [
+    dict(alpha_policy='ignore', type='LoadGeoTiffRGB'),
+    dict(box_type='qbox', type='mmdet.LoadAnnotations', with_bbox=True),
+    dict(box_type_mapping=dict(gt_bboxes='rbox'), type='ConvertBoxType'),
+    dict(size=1024, type='ResizeAndPad'),
+    dict(angles=[
+        90,
+        180,
+        270,
+    ], prob=0.5, type='RandomChoiceRotate'),
+    dict(
+        direction=[
+            'horizontal',
+            'vertical',
+            'diagonal',
+        ],
+        prob=0.75,
+        type='mmdet.RandomFlip'),
+    dict(type='mmdet.PhotoMetricDistortion'),
+    dict(type='mmdet.PackDetInputs'),
+]
+stage_b_pipeline = [
+    dict(alpha_policy='ignore', type='LoadGeoTiffRGB'),
+    dict(box_type='qbox', type='mmdet.LoadAnnotations', with_bbox=True),
+    dict(box_type_mapping=dict(gt_bboxes='rbox'), type='ConvertBoxType'),
+    dict(size=1024, type='ResizeAndPad'),
+    dict(angles=[
+        90,
+        180,
+        270,
+    ], prob=0.5, type='RandomChoiceRotate'),
+    dict(angle_range=15, prob=0.2, type='RandomRotate'),
+    dict(
+        direction=[
+            'horizontal',
+            'vertical',
+            'diagonal',
+        ],
+        prob=0.75,
+        type='mmdet.RandomFlip'),
+    dict(type='mmdet.PhotoMetricDistortion'),
+    dict(prob=0.1, sigma_range=(
+        1.0,
+        4.0,
+    ), type='RandomGaussianNoise'),
+    dict(prob=0.05, sigma_range=(
+        0.1,
+        0.8,
+    ), type='RandomGaussianBlur'),
+    dict(type='mmdet.PackDetInputs'),
+]
+stage_c_pipeline = [
+    dict(alpha_policy='ignore', type='LoadGeoTiffRGB'),
+    dict(box_type='qbox', type='mmdet.LoadAnnotations', with_bbox=True),
+    dict(box_type_mapping=dict(gt_bboxes='rbox'), type='ConvertBoxType'),
+    dict(size=1024, type='ResizeAndPad'),
+    dict(
+        direction=[
+            'horizontal',
+            'vertical',
+        ],
+        prob=0.5,
+        type='mmdet.RandomFlip'),
+    dict(type='mmdet.PackDetInputs'),
+]
+test_cfg = dict(type='TestLoop')
+test_dataloader = dict(
+    batch_size=1,
+    dataset=dict(
+        ann_file='splits/val.txt',
+        boundary_mode='refit',
+        data_prefix=dict(ann_path='gt/', img_path='input_path/'),
+        data_root='/mnt/ht2-nas2/EO_test/wyf/tzb/data/car_det_train',
+        drop_invalid=True,
+        filter_cfg=dict(filter_empty_gt=True),
+        img_suffix='.tif',
+        min_box_area=1.0,
+        min_box_side=1.0,
+        min_visible_ratio=0.5,
+        pipeline=[
+            dict(alpha_policy='ignore', type='LoadGeoTiffRGB'),
+            dict(
+                box_type='qbox', type='mmdet.LoadAnnotations', with_bbox=True),
+            dict(
+                box_type_mapping=dict(gt_bboxes='rbox'),
+                type='ConvertBoxType'),
+            dict(size=1024, type='ResizeAndPad'),
+            dict(
+                meta_keys=(
+                    'img_id',
+                    'img_path',
+                    'ori_shape',
+                    'img_shape',
+                    'scale_factor',
+                    'geo_transform',
+                    'projection',
+                ),
+                type='mmdet.PackDetInputs'),
+        ],
+        test_mode=True,
+        type='TianzhibeiCarDataset'),
+    drop_last=False,
+    num_workers=4,
+    persistent_workers=True,
+    pin_memory=True,
+    sampler=dict(shuffle=False, type='DefaultSampler'))
+test_evaluator = dict(metric='mAP', type='DOTAMetric')
+train_cfg = dict(
+    dynamic_intervals=[
+        (
+            5,
+            2,
+        ),
+        (
+            28,
+            1,
+        ),
+    ],
+    max_epochs=40,
+    type='EpochBasedTrainLoop',
+    val_interval=1)
+train_dataloader = dict(
+    batch_sampler=None,
+    batch_size=4,
+    dataset=dict(
+        ann_file='splits/train.txt',
+        boundary_mode='refit',
+        data_prefix=dict(ann_path='gt/', img_path='input_path/'),
+        data_root='/mnt/ht2-nas2/EO_test/wyf/tzb/data/car_det_train',
+        drop_invalid=True,
+        filter_cfg=dict(filter_empty_gt=True),
+        img_suffix='.tif',
+        min_box_area=1.0,
+        min_box_side=1.0,
+        min_visible_ratio=0.5,
+        pipeline=[
+            dict(alpha_policy='ignore', type='LoadGeoTiffRGB'),
+            dict(
+                box_type='qbox', type='mmdet.LoadAnnotations', with_bbox=True),
+            dict(
+                box_type_mapping=dict(gt_bboxes='rbox'),
+                type='ConvertBoxType'),
+            dict(size=1024, type='ResizeAndPad'),
+            dict(angles=[
+                90,
+                180,
+                270,
+            ], prob=0.5, type='RandomChoiceRotate'),
+            dict(
+                direction=[
+                    'horizontal',
+                    'vertical',
+                    'diagonal',
+                ],
+                prob=0.75,
+                type='mmdet.RandomFlip'),
+            dict(type='mmdet.PhotoMetricDistortion'),
+            dict(type='mmdet.PackDetInputs'),
+        ],
+        type='TianzhibeiCarDataset'),
+    num_workers=4,
+    persistent_workers=True,
+    pin_memory=True,
+    sampler=dict(
+        dense_threshold=118,
+        hard_fraction=0.2,
+        ordinary_fraction=0.5,
+        phase_schedule=[],
+        rare_fraction=0.3,
+        rare_labels=(
+            5,
+            6,
+            7,
+            8,
+            9,
+        ),
+        type='TianzhibeiBalancedSampler'))
+train_pipeline = [
+    dict(alpha_policy='warn', type='LoadGeoTiffRGB'),
+    dict(box_type='qbox', type='mmdet.LoadAnnotations', with_bbox=True),
+    dict(box_type_mapping=dict(gt_bboxes='rbox'), type='ConvertBoxType'),
+    dict(size=1024, type='ResizeAndPad'),
+    dict(
+        direction=[
+            'horizontal',
+            'vertical',
+            'diagonal',
+        ],
+        prob=0.75,
+        type='mmdet.RandomFlip'),
+    dict(type='mmdet.PhotoMetricDistortion'),
+    dict(type='mmdet.PackDetInputs'),
+]
+val_cfg = dict(type='ValLoop')
+val_dataloader = dict(
+    batch_size=4,
+    dataset=dict(
+        ann_file='splits/val.txt',
+        boundary_mode='refit',
+        data_prefix=dict(ann_path='gt/', img_path='input_path/'),
+        data_root='/mnt/ht2-nas2/EO_test/wyf/tzb/data/car_det_train',
+        drop_invalid=True,
+        filter_cfg=dict(filter_empty_gt=True),
+        img_suffix='.tif',
+        min_box_area=1.0,
+        min_box_side=1.0,
+        min_visible_ratio=0.5,
+        pipeline=[
+            dict(alpha_policy='ignore', type='LoadGeoTiffRGB'),
+            dict(
+                box_type='qbox', type='mmdet.LoadAnnotations', with_bbox=True),
+            dict(
+                box_type_mapping=dict(gt_bboxes='rbox'),
+                type='ConvertBoxType'),
+            dict(size=1024, type='ResizeAndPad'),
+            dict(
+                meta_keys=(
+                    'img_id',
+                    'img_path',
+                    'ori_shape',
+                    'img_shape',
+                    'scale_factor',
+                    'geo_transform',
+                    'projection',
+                ),
+                type='mmdet.PackDetInputs'),
+        ],
+        test_mode=True,
+        type='TianzhibeiCarDataset'),
+    drop_last=False,
+    num_workers=4,
+    persistent_workers=True,
+    pin_memory=True,
+    sampler=dict(shuffle=False, type='DefaultSampler'))
+val_evaluator = dict(metric='mAP', type='DOTAMetric')
+val_pipeline = [
+    dict(alpha_policy='warn', type='LoadGeoTiffRGB'),
+    dict(box_type='qbox', type='mmdet.LoadAnnotations', with_bbox=True),
+    dict(box_type_mapping=dict(gt_bboxes='rbox'), type='ConvertBoxType'),
+    dict(size=1024, type='ResizeAndPad'),
+    dict(
+        meta_keys=(
+            'img_id',
+            'img_path',
+            'ori_shape',
+            'img_shape',
+            'scale_factor',
+            'geo_transform',
+            'projection',
+        ),
+        type='mmdet.PackDetInputs'),
+]
+vis_backends = [
+    dict(type='LocalVisBackend'),
+]
+visualizer = dict(
+    name='visualizer',
+    type='RotLocalVisualizer',
+    vis_backends=[
+        dict(type='LocalVisBackend'),
+    ])
+work_dir = 'work_dirs/a100_reference'
+
+2026/07/15 12:01:26 - mmengine - INFO - Distributed training is not used, all SyncBatchNorm (SyncBN) layers in the model will be automatically reverted to BatchNormXd layers if they are used.
+2026/07/15 12:01:26 - mmengine - INFO - Hooks will be executed in the following order:
+before_run:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(49          ) EMAHook                            
+(BELOW_NORMAL) LoggerHook                         
+ -------------------- 
+after_load_checkpoint:
+(49          ) EMAHook                            
+ -------------------- 
+before_train:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(49          ) EMAHook                            
+(NORMAL      ) IterTimerHook                      
+(VERY_LOW    ) CheckpointHook                     
+ -------------------- 
+before_train_epoch:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(NORMAL      ) IterTimerHook                      
+(NORMAL      ) DistSamplerSeedHook                
+(NORMAL      ) NumClassCheckHook                  
+ -------------------- 
+before_train_iter:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(NORMAL      ) IterTimerHook                      
+ -------------------- 
+after_train_iter:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(49          ) EMAHook                            
+(NORMAL      ) IterTimerHook                      
+(BELOW_NORMAL) LoggerHook                         
+(LOW         ) ParamSchedulerHook                 
+(VERY_LOW    ) CheckpointHook                     
+ -------------------- 
+after_train_epoch:
+(NORMAL      ) IterTimerHook                      
+(LOW         ) ParamSchedulerHook                 
+(VERY_LOW    ) CheckpointHook                     
+ -------------------- 
+before_val:
+(VERY_HIGH   ) RuntimeInfoHook                    
+ -------------------- 
+before_val_epoch:
+(49          ) EMAHook                            
+(NORMAL      ) IterTimerHook                      
+(NORMAL      ) NumClassCheckHook                  
+ -------------------- 
+before_val_iter:
+(NORMAL      ) IterTimerHook                      
+ -------------------- 
+after_val_iter:
+(NORMAL      ) IterTimerHook                      
+(NORMAL      ) DetVisualizationHook               
+(BELOW_NORMAL) LoggerHook                         
+ -------------------- 
+after_val_epoch:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(49          ) EMAHook                            
+(NORMAL      ) IterTimerHook                      
+(BELOW_NORMAL) LoggerHook                         
+(LOW         ) ParamSchedulerHook                 
+(VERY_LOW    ) CheckpointHook                     
+ -------------------- 
+after_val:
+(VERY_HIGH   ) RuntimeInfoHook                    
+ -------------------- 
+before_save_checkpoint:
+(49          ) EMAHook                            
+ -------------------- 
+after_train:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(VERY_LOW    ) CheckpointHook                     
+ -------------------- 
+before_test:
+(VERY_HIGH   ) RuntimeInfoHook                    
+ -------------------- 
+before_test_epoch:
+(49          ) EMAHook                            
+(NORMAL      ) IterTimerHook                      
+ -------------------- 
+before_test_iter:
+(NORMAL      ) IterTimerHook                      
+ -------------------- 
+after_test_iter:
+(NORMAL      ) IterTimerHook                      
+(NORMAL      ) DetVisualizationHook               
+(BELOW_NORMAL) LoggerHook                         
+ -------------------- 
+after_test_epoch:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(49          ) EMAHook                            
+(NORMAL      ) IterTimerHook                      
+(BELOW_NORMAL) LoggerHook                         
+ -------------------- 
+after_test:
+(VERY_HIGH   ) RuntimeInfoHook                    
+ -------------------- 
+after_run:
+(BELOW_NORMAL) LoggerHook                         
+ -------------------- 
+2026/07/15 12:01:42 - mmengine - WARNING - The prefix is not set in metric class DumpResults.
+2026/07/15 12:01:42 - mmengine - INFO - Load checkpoint from ./work_dirs/lsknet-s_fpn_smoothl1_baseline_40e/epoch_40.pth
+2026/07/15 12:02:06 - mmengine - INFO - Epoch(test) [  50/1862]    eta: 0:14:29  time: 0.4801  data_time: 0.0108  memory: 17013  
+2026/07/15 12:02:28 - mmengine - INFO - Epoch(test) [ 100/1862]    eta: 0:13:28  time: 0.4373  data_time: 0.0003  memory: 581  
+2026/07/15 12:02:49 - mmengine - INFO - Epoch(test) [ 150/1862]    eta: 0:12:41  time: 0.4163  data_time: 0.0003  memory: 581  
+2026/07/15 12:03:09 - mmengine - INFO - Epoch(test) [ 200/1862]    eta: 0:11:57  time: 0.3920  data_time: 0.0003  memory: 581  
+2026/07/15 12:03:28 - mmengine - INFO - Epoch(test) [ 250/1862]    eta: 0:11:24  time: 0.3962  data_time: 0.0003  memory: 581  
+2026/07/15 12:03:48 - mmengine - INFO - Epoch(test) [ 300/1862]    eta: 0:10:55  time: 0.3961  data_time: 0.0003  memory: 581  
+2026/07/15 12:04:08 - mmengine - INFO - Epoch(test) [ 350/1862]    eta: 0:10:31  time: 0.4037  data_time: 0.0003  memory: 581  
+2026/07/15 12:04:28 - mmengine - INFO - Epoch(test) [ 400/1862]    eta: 0:10:06  time: 0.3987  data_time: 0.0003  memory: 581  
+2026/07/15 12:04:49 - mmengine - INFO - Epoch(test) [ 450/1862]    eta: 0:09:44  time: 0.4029  data_time: 0.0003  memory: 581  
+2026/07/15 12:05:08 - mmengine - INFO - Epoch(test) [ 500/1862]    eta: 0:09:21  time: 0.3985  data_time: 0.0003  memory: 581  
+2026/07/15 12:05:29 - mmengine - INFO - Epoch(test) [ 550/1862]    eta: 0:08:59  time: 0.4020  data_time: 0.0003  memory: 581  
+2026/07/15 12:05:49 - mmengine - INFO - Epoch(test) [ 600/1862]    eta: 0:08:38  time: 0.4031  data_time: 0.0003  memory: 581  
+2026/07/15 12:06:09 - mmengine - INFO - Epoch(test) [ 650/1862]    eta: 0:08:16  time: 0.4007  data_time: 0.0003  memory: 581  
+2026/07/15 12:06:28 - mmengine - INFO - Epoch(test) [ 700/1862]    eta: 0:07:54  time: 0.3922  data_time: 0.0003  memory: 581  
+2026/07/15 12:06:48 - mmengine - INFO - Epoch(test) [ 750/1862]    eta: 0:07:33  time: 0.3961  data_time: 0.0003  memory: 581  
+2026/07/15 12:07:08 - mmengine - INFO - Epoch(test) [ 800/1862]    eta: 0:07:12  time: 0.3942  data_time: 0.0003  memory: 581  
+2026/07/15 12:07:28 - mmengine - INFO - Epoch(test) [ 850/1862]    eta: 0:06:51  time: 0.3957  data_time: 0.0003  memory: 581  
+2026/07/15 12:07:48 - mmengine - INFO - Epoch(test) [ 900/1862]    eta: 0:06:30  time: 0.4000  data_time: 0.0003  memory: 581  
+2026/07/15 12:08:08 - mmengine - INFO - Epoch(test) [ 950/1862]    eta: 0:06:10  time: 0.4077  data_time: 0.0003  memory: 581  
+2026/07/15 12:08:28 - mmengine - INFO - Epoch(test) [1000/1862]    eta: 0:05:49  time: 0.3960  data_time: 0.0003  memory: 581  
+2026/07/15 12:08:48 - mmengine - INFO - Epoch(test) [1050/1862]    eta: 0:05:29  time: 0.4001  data_time: 0.0003  memory: 581  
+2026/07/15 12:09:08 - mmengine - INFO - Epoch(test) [1100/1862]    eta: 0:05:08  time: 0.4024  data_time: 0.0003  memory: 581  
+2026/07/15 12:09:28 - mmengine - INFO - Epoch(test) [1150/1862]    eta: 0:04:48  time: 0.3997  data_time: 0.0003  memory: 581  
+2026/07/15 12:09:48 - mmengine - INFO - Epoch(test) [1200/1862]    eta: 0:04:28  time: 0.4060  data_time: 0.0003  memory: 581  
+2026/07/15 12:10:09 - mmengine - INFO - Epoch(test) [1250/1862]    eta: 0:04:07  time: 0.4116  data_time: 0.0003  memory: 581  
+2026/07/15 12:10:29 - mmengine - INFO - Epoch(test) [1300/1862]    eta: 0:03:47  time: 0.3985  data_time: 0.0003  memory: 581  
+2026/07/15 12:10:49 - mmengine - INFO - Epoch(test) [1350/1862]    eta: 0:03:27  time: 0.4130  data_time: 0.0003  memory: 581  
+2026/07/15 12:11:10 - mmengine - INFO - Epoch(test) [1400/1862]    eta: 0:03:07  time: 0.4129  data_time: 0.0003  memory: 581  
+2026/07/15 12:11:31 - mmengine - INFO - Epoch(test) [1450/1862]    eta: 0:02:47  time: 0.4153  data_time: 0.0003  memory: 581  
+2026/07/15 12:11:51 - mmengine - INFO - Epoch(test) [1500/1862]    eta: 0:02:26  time: 0.4023  data_time: 0.0003  memory: 581  
+2026/07/15 12:12:12 - mmengine - INFO - Epoch(test) [1550/1862]    eta: 0:02:06  time: 0.4171  data_time: 0.0003  memory: 581  
+2026/07/15 12:12:32 - mmengine - INFO - Epoch(test) [1600/1862]    eta: 0:01:46  time: 0.4066  data_time: 0.0003  memory: 581  
+2026/07/15 12:12:53 - mmengine - INFO - Epoch(test) [1650/1862]    eta: 0:01:26  time: 0.4101  data_time: 0.0003  memory: 581  
+2026/07/15 12:13:13 - mmengine - INFO - Epoch(test) [1700/1862]    eta: 0:01:05  time: 0.3972  data_time: 0.0003  memory: 581  
+2026/07/15 12:13:33 - mmengine - INFO - Epoch(test) [1750/1862]    eta: 0:00:45  time: 0.4050  data_time: 0.0003  memory: 581  
+2026/07/15 12:13:53 - mmengine - INFO - Epoch(test) [1800/1862]    eta: 0:00:25  time: 0.4079  data_time: 0.0003  memory: 581  
+2026/07/15 12:14:14 - mmengine - INFO - Epoch(test) [1850/1862]    eta: 0:00:04  time: 0.4079  data_time: 0.0003  memory: 581  
+2026/07/15 12:14:24 - mmengine - INFO - 
+---------------iou_thr: 0.5---------------
+2026/07/15 12:14:43 - mmengine - INFO - 
++---------------+-------+--------+--------+-------+
+| class         | gts   | dets   | recall | ap    |
++---------------+-------+--------+--------+-------+
+| Small Car     | 40495 | 117420 | 0.986  | 0.820 |
+| Van           | 39275 | 119496 | 0.985  | 0.820 |
+| Dump Truck    | 6645  | 67763  | 0.972  | 0.755 |
+| Cargo Truck   | 3214  | 37583  | 0.942  | 0.755 |
+| other-vehicle | 1270  | 46279  | 0.814  | 0.298 |
+| Bus           | 324   | 11810  | 0.941  | 0.783 |
+| Truck Tractor | 261   | 8975   | 0.854  | 0.734 |
+| Excavator     | 255   | 9162   | 0.773  | 0.591 |
+| Trailer       | 232   | 11814  | 0.866  | 0.554 |
+| Tractor       | 60    | 7324   | 0.917  | 0.552 |
++---------------+-------+--------+--------+-------+
+| mAP           |       |        |        | 0.666 |
++---------------+-------+--------+--------+-------+
+2026/07/15 12:14:44 - mmengine - INFO - Results has been saved to work_dirs/a100_reference/predictions.pkl.
+2026/07/15 12:14:44 - mmengine - INFO - Epoch(test) [1862/1862]    dota/mAP: 0.6662  dota/AP50: 0.6660  data_time: 0.0006  time: 0.4059

@@ -1,0 +1,7 @@
+torch: <module 'torch.version' from '/mnt/ht2-nas2/EO_test/miniconda3/envs/tzb/lib/python3.10/site-packages/torch/version.py'>
+cuda: 11.8
+mmcv: <module 'mmcv.version' from '/mnt/ht2-nas2/EO_test/miniconda3/envs/tzb/lib/python3.10/site-packages/mmcv/version.py'>
+mmengine: <module 'mmengine.version' from '/mnt/ht2-nas2/EO_test/miniconda3/envs/tzb/lib/python3.10/site-packages/mmengine/version.py'>
+mmdet: <module 'mmdet.version' from '/mnt/ht2-nas2/EO_test/miniconda3/envs/tzb/lib/python3.10/site-packages/mmdet/version.py'>
+mmrotate: <module 'mmrotate.version' from '/mnt/ht2-nas2/EO_test/wyf/tzb/code/tzb_track1/mmrotate/version.py'>
+gpu: NVIDIA A100-SXM4-80GB
